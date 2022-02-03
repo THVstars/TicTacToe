@@ -2,7 +2,7 @@ package com.carolinasanchez;
 
 import java.util.*;
 
-public class TicTacToe {
+public class TicTacToe { // fields or properties -> public, class, static, private
 
     static ArrayList<Integer> playerPositions = new ArrayList<>();
     static ArrayList<Integer> cpuPositions = new ArrayList<>();
@@ -16,15 +16,15 @@ public class TicTacToe {
 
         printGameBoard(gameBoard);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // reads user input
 
-        while(true) {
+        while(true) { // keeps executing until a condition within the while loop is false
             System.out.println("");
             System.out.println("Enter your placement (1-9):");
-            int playerPosition = scanner.nextInt();
+            int playerPosition = scanner.nextInt(); // read user input
             while(playerPositions.contains(playerPosition) || cpuPositions.contains(playerPosition)) {
                 System.out.println("Sorry, that placement is already taken. Try again!");
-                playerPosition = scanner.nextInt();
+                playerPosition = scanner.nextInt(); // read user input
             }
 
             placePiece(gameBoard, playerPosition, "player");
@@ -117,7 +117,7 @@ public class TicTacToe {
 
     public static String checkWinner() {
 
-        List topRow = Arrays.asList(1, 2, 3);
+        List topRow = Arrays.asList(1, 2, 3); // asList converts to List format
         List middleRow = Arrays.asList(4, 5, 6);
         List bottomRow = Arrays.asList(7, 8, 9);
         List leftColumn = Arrays.asList(1, 4, 7);
@@ -126,7 +126,7 @@ public class TicTacToe {
         List rightDiagonal = Arrays.asList(1, 5, 9);
         List leftDiagonal = Arrays.asList(3, 5, 7);
 
-        List<List> winning = new ArrayList<List>();
+        List<List> winning = new ArrayList<List>(); // List of lists, so we can iterate through all at once
         winning.add(topRow);
         winning.add(middleRow);
         winning.add(bottomRow);
